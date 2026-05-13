@@ -73,7 +73,7 @@ Terraform auto-loads:
 
 terraform.tfvars
 *.auto.tfvars
-❌ 8. Mistakes You Made (Important)
+# 8. Mistakes You Made (Important)
 ❌ 1. Quotes around variables
 
 👉 "var.ami" → wrong
@@ -94,7 +94,7 @@ iam
 ivolume = "10" ❌
 ❌ 6. Variable mismatch
 iam ≠ iami
-🧠 9. Debugging Approach
+# 9. Debugging Approach
 
 When error occurs:
 
