@@ -1,16 +1,16 @@
 **day-1 terraform-practice**
 
-1. What is Terraform?
+# 1. What is Terraform?
 
 Terraform is an Infrastructure as Code (IaC) tool used to provision and manage cloud resources using code.
 
-🧱 2. Basic File Structure
+# 2. Basic File Structure
 provider.tf        → provider configuration
 resource.tf        → infrastructure (EC2)
 variables.tf       → variable definitions
 terraform.tfvars   → variable values
 **In terraform variables are use to make your code resable and dynamic instead of hardcoding values**
-🔑 3. Variables in Terraform
+# 3. Variables in Terraform
 ✔ Definition (variables.tf)
 variable "instance_type" {
   type = string
@@ -19,7 +19,7 @@ variable "instance_type" {
 instance_type = var.instance_type
 ✔ Values (terraform.tfvars)
 instance_type = "t2.micro"
-📊 4. Variable Types
+# 4. Variable Types
 Type	Example
 string	"t2.micro"
 number	10
@@ -27,7 +27,7 @@ bool	true
 list	["web-1","web-2"]
 map	{ Name = "web" }
 object	structured config
-⚙️ 5. EC2 Creation (Using Variables)
+# 5. EC2 Creation (Using Variables)
 resource "aws_instance" "web" {
 
   ami           = var.ami
@@ -42,7 +42,7 @@ resource "aws_instance" "web" {
     volume_size = var.volume_size
   }
 }
-🔁 6. Multiple EC2 (count)
+# 6. Multiple EC2 (count)
 resource "aws_instance" "web" {
 
   count = var.icount
@@ -57,7 +57,7 @@ resource "aws_instance" "web" {
 
 👉 Creates multiple instances dynamically
 
-🔥 7. Important Rules
+# 7. Important Rules
 ✔ Rule 1: No Quotes for Variables
 ami = var.ami        ✅
 ami = "var.ami"      ❌
@@ -106,18 +106,18 @@ data type
 Run:
 terraform validate
 terraform plan
-🚀 10. Commands
+# 10. Commands
 terraform init
 terraform validate
 terraform plan
 terraform apply
-💡 11. Best Practices
+# 11. Best Practices
 Separate variables and values
 Use tfvars for environments
 Avoid hardcoding
 Use lists for multiple resources
 Maintain clean file structure
-🧠 12. Interview Ready Answer
+# 12. Interview Ready Answer
 
 Terraform variables are used to make infrastructure code reusable and dynamic. They are defined in variables.tf, assigned in tfvars files, and accessed using var.<name>.
 
