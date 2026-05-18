@@ -1,26 +1,26 @@
 # Terraform workspaces
 Terraform workspaces are used to manage multiple environments with the same Terraform configuration by maintaining separate state files for each workspace.
 
-# **List Workspaces**
+# --List Workspaces
 terraform workspace list
 terraform workspace show
 * * = current workspace
-# **create workspace**
+# --create workspace
 terraform workspace new dev
-# **Switching between workspaces**
+# --Switching between workspaces
 terraform workspace select dev
-# **Delete workspace**
+# --Delete workspace
 terraform workspace delete dev
 
 # Locals
 
 Locals in Terraform are used to store reusable expressions or values that help simplify and standardize Terraform configurations.
-# **Syntax** 
+# --Syntax 
 locals {
   instance_type = "t2.micro"
 }
 
-# **Use**
+# --Use
 instance_type = local.instance_type
 
 # Taint
@@ -32,12 +32,12 @@ The replace option in Terraform explicitly forces a resource to be recreated dur
 # lyfecycle
 Lifecycle rules in Terraform control how resources are created, updated, or destroyed to ensure safe infrastructure management.
 
-# **Prevent Destroy**
+# --Prevent Destroy
 lifecycle {
   prevent_destroy = true
 }
 
-# **Ignore Changes**
+# --Ignore Changes
 lifecycle {
   ignore_changes = [tags]
 }
