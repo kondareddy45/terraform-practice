@@ -15,11 +15,32 @@ terraform workspace delete dev
 # Locals
 
 Locals in Terraform are used to store reusable expressions or values that help simplify and standardize Terraform configurations.
---> Syntax 
+**Syntax** 
 locals {
   instance_type = "t2.micro"
 }
 
---> Use
+**Use**
 instance_type = local.instance_type
+
+# Taint
+Taint in Terraform is used to mark a resource as damaged or needing recreation during the next apply operation.
+
+# replace
+The replace option in Terraform explicitly forces a resource to be recreated during terraform apply.
+
+# lyfecycle
+Lifecycle rules in Terraform control how resources are created, updated, or destroyed to ensure safe infrastructure management.
+
+**Prevent Destroy**
+lifecycle {
+  prevent_destroy = true
+}
+
+**Ignore Changes**
+lifecycle {
+  ignore_changes = [tags]
+}
+
+
 
