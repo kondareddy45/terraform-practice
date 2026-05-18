@@ -12,3 +12,14 @@ terraform workspace select dev
 **Delete workspace**
 terraform workspace delete dev
 
+# Locals
+
+Locals in Terraform are used to store reusable expressions or values that help simplify and standardize Terraform configurations.
+--> Syntax 
+locals {
+  instance_type = "t2.micro"
+}
+
+--> Use
+instance_type = local.instance_type
+
